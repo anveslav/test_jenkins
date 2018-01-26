@@ -1,19 +1,18 @@
-pipeline {
-    agent any
+node {
     stages {
         stage('cleaning') {
             steps {
-                sh 'gradlew clean -x test'
+                bat 'gradlew clean -x test'
             }
         }
         stage('building') {
             steps {
-                sh 'gradlew build -g /cache/.gradle --info'
+                bat 'gradlew build -g /cache/.gradle --info'
             }
         }
          stage('testing') {
                     steps {
-                sh 'gradlew build -g /cache/.gradle --info'
+                bat 'gradlew build -g /cache/.gradle --info'
             }
          }
     }
