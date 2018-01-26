@@ -13,7 +13,7 @@ pipeline {
         }
          stage('testing') {
                     steps {
-                bat 'gradlew build -g /cache/.gradle --info'
+                bat 'gradlew -g /cache/.gradle test --info'
             }
          }
          stage('sonar checking') {
