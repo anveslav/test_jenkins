@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('cleaning') {
             steps {
-                bat 'gradle clean -x test'
+                bat 'gradlew clean -x test'
             }
         }
         stage('building') {
             steps {
-                bat 'gradle build -g /cache/.gradle --info'
+                bat 'gradlew build -g /cache/.gradle --info'
             }
         }
          stage('testing') {
                     steps {
-                bat 'gradle build -g /cache/.gradle --info'
+                bat 'gradlew build -g /cache/.gradle --info'
             }
          }
     }
