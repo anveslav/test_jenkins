@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+ agent any
+     triggers {
+            pollSCM 'H/10 * * * *'
+        }
     stages {
         stage('cleaning') {
             steps {
@@ -16,7 +19,7 @@ pipeline {
                 bat 'gradlew -g /cache/.gradle test --info'
             }
          }
-         stage('checking') {
+         stage('sonar checking') {
                               steps {
                         bat './gradlew sonarqube \
                               -Dsonar.host.url=http://localhost:9000 \
