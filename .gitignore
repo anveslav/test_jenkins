@@ -1,0 +1,14 @@
+# JetBrains software
+.idea/
+*.iml
+
+# Gradle cache & gradle wrapper
+.gradle/
+gradle/
+gradlew.bat
+gradle.sh
+gradlew
+gradle/
+# Compile results
+build/
+out/

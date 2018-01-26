@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+ agent any
+     triggers {
+            pollSCM 'H/10 * * * *'
+        }
     stages {
         stage('cleaning') {
             steps {
@@ -13,7 +16,7 @@ pipeline {
         }
          stage('testing') {
                     steps {
-                bat 'gradlew build -g /cache/.gradle --info'
+                bat 'gradlew -g /cache/.gradle test --info'
             }
          }
          stage('sonar checking') {
