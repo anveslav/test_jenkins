@@ -9,6 +9,6 @@ public class TestTest {
   @Test
   public void helloMethod() {
     String expected = "Hello";
-    assertEquals(expected, "HelLo");
+    assertEquals(expected, "Hello");
   }
 }
