@@ -16,7 +16,7 @@ pipeline {
                 bat 'gradlew build -g /cache/.gradle --info'
             }
          }
-         stage('checking') {
+         stage('sonar checking') {
                               steps {
                         bat './gradlew sonarqube \
                               -Dsonar.host.url=http://localhost:9000 \
