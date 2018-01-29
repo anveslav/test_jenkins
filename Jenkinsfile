@@ -1,6 +1,5 @@
 node{
     checkout scm
-        bat 'chmod +x gradlew'
       stage('cleaning') {
         bat './gradlew clean -x test'
     }
