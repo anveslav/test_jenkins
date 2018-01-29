@@ -17,10 +17,7 @@ node('master') {
       }
 
 stage('Sonar checking'){
-withSonarQubeEnv {
-
         bat './gradlew clean sonarqube'
-    }
     }
 
 }
