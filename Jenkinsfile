@@ -13,7 +13,7 @@ node('master') {
       }
 
       stage('Gradle: Test') {
-        bat './gradle test'
+        bat './gradlew test'
       }
 
 stage('Sonar checking'){
