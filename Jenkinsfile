@@ -12,7 +12,7 @@ def branchIsMaster = (env.BRANCH_NAME == 'master')
 node('master') {
 
   // set environment variables
-  env.PATH = "${tool 'gradle-4.1'}/bin:${tool 'Sonar_Scanner'}/bin:${env.PATH}"
+  env.PATH = "${tool 'gradle-4.0'}/bin:${tool 'Sonar_Scanner'}/bin:${env.PATH}"
   env.GRADLE_USER_HOME = env.WORKSPACE
 
   stage('Clear workspace') {
