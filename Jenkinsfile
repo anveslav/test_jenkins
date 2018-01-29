@@ -1,13 +1,13 @@
 node{
     checkout scm
-        sh 'chmod +x gradlew'
+        bat 'chmod +x gradlew'
       stage('cleaning') {
-        sh './gradlew clean -x test'
+        bat './gradlew clean -x test'
     }
       stage('building') {
-        sh './gradlew build -g /cache/.gradle --info'
+        bat './gradlew build -g /cache/.gradle --info'
               }
       stage('testing') {
-        sh './gradlew -g /cache/.gradle test --info'
+        bat './gradlew -g /cache/.gradle test --info'
                 }
 }
