@@ -4,6 +4,9 @@ def branchIsMaster = (env.BRANCH_NAME == 'master')
 
 node('master') {
 
+
+  sh'chmod +x gradlew'
+
   stage('Git checkout') {
     checkout scm
   }
@@ -16,7 +19,7 @@ node('master') {
         bat './gradlew test'
       }
 
-stage('Sonar checking'){
+      stage('Sonar checking'){
         bat './gradlew clean sonarqube'
     }
 
